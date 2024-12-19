@@ -4,7 +4,6 @@ import "./App.css";
 function App() {
   const [city, setCity] = useState("");
   const [weather, setWeather] = useState(null);
-  const [forecast, setForecast] = useState([]);
   const [error, setError] = useState("");
 
   const apiKey = "45c84d456100e6155ea020d988bfa464";
@@ -13,28 +12,18 @@ function App() {
     if (!city) {
       setError("Veuillez entrer une ville.");
       setWeather(null);
-      setForecast([]);
       return;
     }
 
     try {
-      const weatherResponse = await fetch(
+      const response = await fetch(
         `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=fr`
       );
-      const weatherData  = await weatherResponse.json();
+      const data = await response.json();
 
-      const forecastResponse = await fetch(
-        `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric&lang=fr`
-      );
-      const forecastData = await forecastResponse.json();
-
-      if (weatherData.cod === 200 && forecastData.cod === "200") {
-        setWeather(weatherData);
+      if (data.cod === 200) {
+        setWeather(data);
         setError("");
-
-        const dailyForecasts = forecastData.list.filter((item) =>
-          item.dt_txt.includes('12:00:00')
-        );
       } else {
         setError(`Erreur : ${data.message}`);
         setWeather(null);
