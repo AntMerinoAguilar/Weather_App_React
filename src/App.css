@@ -1,0 +1,132 @@
+/* Corps de la page */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  color: #fff;
+}
+
+.background {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Conteneur principal */
+.app {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);
+  width: 90%;
+  max-width: 400px;
+}
+
+/* Titre */
+h1 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+/* Section de recherche */
+.search {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
+
+.search input {
+  width: 70%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+}
+
+.search button {
+  padding: 10px 15px;
+  font-size: 1rem;
+  background: #2193b0;
+  border: none;
+  color: white;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.search button:hover {
+  background: #6dd5ed;
+}
+
+/* Résultats météo */
+.weather-result {
+  animation: fadeIn 0.5s ease-in-out;
+  margin-bottom: 25px;
+}
+
+.weather-result h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+}
+
+.weather-result img {
+  width: 80px;
+  height: 80px;
+}
+
+.weather-result p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.error {
+  color: #ff5555;
+  font-weight: bold;
+}
+
+/* Animation d'apparition */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Fond par défaut */
+.default-bg {
+  background: linear-gradient(to top, #2193b0, #6dd5ed); /* Bleu clair */
+}
+
+/* Fond ensoleillé */
+.sunny-bg {
+  background: linear-gradient(to top, #f7b733, #fc4a1a); /* Orange lumineux */
+}
+
+/* Fond nuageux */
+.cloudy-bg {
+  background: linear-gradient(to top, #bdc3c7, #2c3e50); /* Gris foncé */
+}
+
+/* Fond pluvieux */
+.rainy-bg {
+  background: linear-gradient(to top, #667db6, #0082c8, #0082c8); /* Bleu sombre */
+}
+
+/* Fond orageux */
+.stormy-bg {
+  background: linear-gradient(to top, #373b44, #4286f4); /* Bleu-gris dramatique */
+}
+
+/* Fond neigeux */
+.snowy-bg {
+  background: linear-gradient(to top, #e6dada, #ffffff); /* Blanc et gris clair */
+}
